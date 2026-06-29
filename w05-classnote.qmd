@@ -12,6 +12,7 @@ format:
        code-line-numbers: true
        code-fold: false
        code-link: true
+       df-print: paged
        embed-resources: true
 execute: 
   freeze: auto
@@ -22,3 +23,32 @@ execute:
 # Class Overview
 
 # Assignment Deadline Adjustment
+
+# Some coding activities
+
+```{r}
+#| label: reading-csv-from-web
+
+library(tidyverse)
+
+url_perf <- read.csv(
+  "https://raw.githubusercontent.com/jaejungca/R-data-import-export/refs/heads/main/data/StudentsPerformance.csv"
+)
+
+url_perf |> str()
+url_perf |> skimr::skim()
+url_perf |> typeof()
+url_perf |> class()
+
+url_perf |> as_tibble() -> url_perf_tibble
+url_perf
+
+library(gt)
+url_perf_tibble |> gt()
+```
+
+
+
+# Appendix
+
+-   My webpage for this work: <https://jaejungca.github.io/IBM3202-W05-classnote/w05-classnote.html>
